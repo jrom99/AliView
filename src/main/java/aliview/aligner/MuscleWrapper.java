@@ -17,7 +17,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
 import utils.OSNativeUtils;
-
+import dev.dirs.ProjectDirectories;
 
 public class MuscleWrapper {
 
@@ -93,7 +93,9 @@ public class MuscleWrapper {
 
 
 	public static final String getAliViewUserDataDirectory() {
-		return System.getProperty("user.home") + File.separator + ".AliView";
+		ProjectDirectories dirs = ProjectDirectories.from("com", "Aliview", "Aliview");
+		return dirs.dataDir;
+		// return System.getProperty("user.home") + File.separator + ".AliView";
 	}
 
 
