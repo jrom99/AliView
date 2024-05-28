@@ -8,6 +8,7 @@ minjavamem="512M"
 maxjavamem="1024M"
 debug=0
 version=0
+config_home="${XDG_CONFIG_HOME:-$HOME/.config}/Aliview"
 
 function show_help () {
 cat <<HEREDOC
@@ -132,17 +133,16 @@ fi
 ## Launch aliview on all input
 if [ $# -eq 0 ]; then
     if [ "$debug" -eq 0 ]; then
-        $myjava -Xmx$maxjavamem -Xms$minjavamem -jar $aliview &> /dev/null &
+        $myjava -Xmx$maxjavamem -Xms$minjavamem -Djava.util.prefs.userRoot="$config_home" -jar $aliview &> /dev/null &
     else
-        $myjava -Xmx$maxjavamem -Xms$minjavamem -jar $aliview
+        $myjava -Xmx$maxjavamem -Xms$minjavamem -Djava.util.prefs.userRoot="$config_home" -jar $aliview
     fi
 else
     for fil in "$@" ; do
         if [ "$debug" -eq 0 ]; then
-            $myjava -Xmx$maxjavamem -Xms$minjavamem -jar $aliview "$fil" &> /dev/null &
+            $myjava -Xmx$maxjavamem -Xms$minjavamem -Djava.util.prefs.userRoot="$config_home" -jar $aliview "$fil" &> /dev/null &
         else
-            $myjava -Xmx$maxjavamem -Xms$minjavamem -jar $aliview "$fil" &
+            $myjava -Xmx$maxjavamem -Xms$minjavamem -Djava.util.prefs.userRoot="$config_home" -jar $aliview "$fil" &
         fi
     done
 fi
-
