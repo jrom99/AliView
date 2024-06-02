@@ -53,3 +53,7 @@ Build, package, create installer and install AliView
      ./make_installer_linux.sh
      cd target/linux-version-*
      sudo ./aliview.install.run
+
+<!-- TODO: Use actual XDG_STATE_HOME to store logs -->
+<!-- TODO: Simplify settings file structure -->
+<!-- TODO: Avoid creating .java/fonts -->

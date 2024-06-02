@@ -7,3 +7,4 @@ Terminal=false
 Icon=/usr/share/aliview/aliicon_128x128.png
 Name=AliView
 Exec=aliview %U
+Categories=Science;
