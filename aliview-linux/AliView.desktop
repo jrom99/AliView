@@ -1,10 +1,10 @@
-#!/usr/bin/env xdg-open
-
 [Desktop Entry]
 Version=1.0
 Type=Application
-Terminal=false
-Icon=/usr/share/aliview/aliicon_128x128.png
 Name=AliView
+Comment=A fast and lightweight sequence viewer
+Terminal=false
+Icon=aliview
 Exec=aliview %U
-Categories=Science;
+MimeType=text/x-fasta;
+Categories=Science;Java;
