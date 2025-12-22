@@ -7,7 +7,7 @@ echo "Make installer fow linux"
 #prepare install-file for LINUX
 #----------------------------------
 
-rsync -av aliview-linux/* target/linux-version*/aliview/
+rsync -avL aliview-linux/* target/linux-version*/aliview/
 
 # make sure all files have right permissions
 chmod 755 -R target
