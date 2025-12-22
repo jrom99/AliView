@@ -12,15 +12,23 @@ fi
 install -d -m755 /usr/share/aliview/
 
 install -v -m755 aliview.jar /usr/share/aliview/
-install -v -m755 aliicon_128x128.png /usr/share/aliview/
+# install -v -m755 aliicon_128x128.png /usr/share/aliview/
 install -v -m755 README.txt /usr/share/aliview/
 install -v -m755 install.sh /usr/share/aliview/
 
 # and program launcher
 if [ -d ~/.local/share/applications ]; then
-  install -v -m755 AliView.desktop ~/.local/share/applications/
-else 
+    install -v -m755 AliView.desktop ~/.local/share/applications/
+else
   if [ -d /usr/share/applications ]; then
     install -v -m755 AliView.desktop /usr/share/applications/
   fi
+fi
+
+if [ -d ~/.local/share/icons ]; then
+  install -v -D -m755 aliview_64x64.png ~/.local/share/icons/hicolor/64x64/apps/aliview.png
+  install -v -D -m755 aliview_128x128.png ~/.local/share/icons/hicolor/128x128/apps/aliview.png
+else
+  install -v -D -m755 aliview_64x64.png /usr/share/icons/hicolor/64x64/apps/aliview.png
+  install -v -D -m755 aliview_128x128.png /usr/share/icons/hicolor/128x128/apps/aliview.png
 fi
