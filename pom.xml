@@ -348,5 +348,10 @@
       <version>1.3.0</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>dev.dirs</groupId>
+      <artifactId>directories</artifactId>
+      <version>26</version>
+    </dependency>
   </dependencies>
 </project>
